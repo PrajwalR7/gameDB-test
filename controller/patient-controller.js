@@ -26,12 +26,15 @@ const getAllPatient = async (req, res) => {
         const data = await firestore.collection('patient').get();
         const patientArray = [];
         if(data.empty) {
-            res.status(404).send('No hospital record found');
+            res.status(404).send('No patient record found');
         }else {
             data.forEach(doc => {
                 const patient = new Patient(
                     doc.id,
-                    doc.data().name
+                    doc.data().name,
+                    doc.data().age,
+                    doc.data().hname,
+                    doc.data().hid
                 );
                 patientArray.push(patient);
             });
