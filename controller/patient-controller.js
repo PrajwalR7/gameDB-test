@@ -38,7 +38,7 @@ const getAllPatient = async (req, res) => {
                 );
                 patientArray.push(patient);
             });
-            res.send(hospArray);
+            res.send(patientArray);
         }
     } catch (error) {
         res.status(400).send(error.message);

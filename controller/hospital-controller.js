@@ -22,11 +22,12 @@ const getAllHospital = async (req, res) => {
             res.status(404).send('No hospital record found');
         }else {
             data.forEach(doc => {
-                const hospital = new Hospital(
+                console.log("in for each")
+                let record = new Hospital(
                     doc.id,
                     doc.data().name
                 );
-                hospArray.push(hospital);
+                hospArray.push(record);
             });
             res.send(hospArray);
         }
