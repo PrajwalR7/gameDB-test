@@ -6,6 +6,4 @@ class Hospital{
     }
 }
 
-module.exports = {
-    Hospital
-}
+module.exports = Hospital
